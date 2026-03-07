@@ -1,0 +1,224 @@
+:root{
+  --bg:#f7f7f7;
+  --card:#ffffff;
+  --text:#111;
+  --muted:#6b7280;
+  --accent:#2563eb; /* change to your brand color */
+  --radius:14px;
+  --shadow:0 8px 30px rgba(0,0,0,.06);
+}
+
+/* Reset-ish */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--text); background:var(--bg);
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(0,0,0,.04), transparent 60%),
+    url("images/bg-texture.jpg");
+  background-size:cover;
+  background-attachment:fixed;
+  background-position:center;
+}
+
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block}
+
+.container{max-width:1100px; margin-inline:auto; padding:24px;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;
+  backdrop-filter:saturate(180%) blur(8px);
+  background:rgba(255,255,255,.7);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.nav-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 24px}
+.brand{font-weight:800;letter-spacing:.2px}
+.menu{display:flex;gap:18px;font-weight:600}
+.nav a:hover{opacity:.75}
+
+/* HERO */
+.hero{padding:64px 0 28px}
+.hero h1{font-size:clamp(28px, 4.5vw, 48px);line-height:1.1;margin:0 0 14px}
+.hero p{color:var(--muted);margin:0 0 22px}
+.cta{
+  display:inline-block;padding:12px 18px;border-radius:12px;font-weight:700;
+  background:var(--accent);color:#fff;box-shadow:var(--shadow)
+}
+.cta.secondary{background:#fff;color:var(--accent);border:1px solid rgba(37,99,235,.25)}
+
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:28px 0 10px}
+.card{background:var(--card);border:1px solid rgba(0,0,0,.06);
+  border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;
+  transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(0,0,0,.10)}
+.card h3{margin:12px 0 6px;font-size:20px}
+.card p{margin:0 0 14px;color:var(--muted)}
+.chip{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(37,99,235,.08);color:var(--accent);font-weight:700}
+
+.section{padding:28px 0}
+.section h2{font-size:26px;margin:0 0 10px}
+.muted{color:var(--muted)}
+.list{display:grid;gap:10px;margin-top:10px}
+.list li{list-style:none;display:flex;align-items:center;gap:8px}
+
+footer{padding:36px 0 60px;color:var(--muted)}
+.footer-wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid rgba(0,0,0,.1)}
+
+/* WhatsApp Button */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366; /* WhatsApp green */
+  color: white;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5b; /* darker green on hover */
+}
+
+.btn-whatsapp svg {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+/*this is for the image*/
+.card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card {
+    position: relative;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+    z-index: 1;
+}
+
+.card:hover::after {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.menu a.active {
+    font-weight: bold;
+    color: #f39c12; /* Highlight color */
+}
+
+
+/* Fade-in animation base */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+/* When in view */
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional hover effect for cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* this is my style for the products*/
+.product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 18px;
+            padding: 20px 0;
+        }
+        .product-card {
+            background: #bdbaba;
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            transition: transform .2s;
+        }
+        .product-card:hover {
+            transform: scale(1.04);
+        }
+        .product-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product-card button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            width: 100%;
+            background: #00c07b;
+            border: none;
+            border-radius: 6px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #floatingCart {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #00c07b;
+            padding: 12px 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 9999;
+            color: black;
+        }
