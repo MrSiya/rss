@@ -378,6 +378,8 @@ window.sendOrder = function() {
     const { text } = buildWhatsAppPayload(name, phone, email);
     const url = `https://wa.me/${RAPREACH_WHATSAPP}?text=${text}`;
     window.open(url, "_blank");
+ // you added this 2026/03/07
+    if (!name) { alert("Please enter your name."); if (nameEl) nameEl.focus(); return; }
     // after sending, clear cart
     order = [];
     saveOrder();
