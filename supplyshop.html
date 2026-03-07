@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Supply Shop – RAPREACH STUDIOS & SUPPLY</title>
+    <link rel="stylesheet" href="style.css" />
+
+
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner container">
+            <div class="brand">RAPREACH STUDIOS & SUPPLY</div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="supplyshop.html">Shop</a>
+                <a href="fitness.html">Fitness</a>
+                <a href="editing.html">Editing</a>
+                <a href="webdev.html">Web Dev</a>
+                <a href="studio.html">Studio</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <h1 style="margin-top:30px;">Supply Shop</h1>
+        <p class="muted">Add items to your cart and checkout via WhatsApp.</p>
+
+
+     <!-- My tab filter test --> 
+        <div class="category-filter">
+    <button class="category-btn active" data-category="all">All</button>
+    <button class="category-btn" data-category="main">Main</button>
+    <button class="category-btn" data-category="phone">Phone Accessories</button>
+    <button class="category-btn" data-category="computers">Computers</button>
+    <button class="category-btn" data-category="phones">Phones</button>
+        </div>
+
+     
+        <!-- PRODUCT GRID STARTS HERE -->
+        <div class="product-grid">
+
+    <!-- PRODUCT TEMPLATE (copy & paste this block to add more products) -->
+    <!-- Product #1 -->
+    <div class="product-card" data-category="Phone">
+        <img src="./RESOURCES/Iphone Charger.jpg" alt="Phone Charger">
+        <h4>Phone Charger</h4>
+        <p>R150</p>
+        <button onclick="addToOrder('Phone Charger',150)">Add to Cart</button>
+    </div>
+
+    <!-- Product #2 -->
+    <div class="product-card">
+        <img src="./RESOURCES/Phone stand.jpg" alt="">
+        <h4>Phone Stand</h4>
+        <p>R30</p>
+        <button onclick="addToOrder('Phone Stand',80)">Add to Cart</button>
+    </div>
+
+    <!-- Product #3 -->
+    <div class="product-card">
+        <img src="./RESOURCES/Phone cable.jpg" alt="">
+        <h4>USB C Phone cable</h4>
+        <p>R60</p>
+        <button onclick="addToOrder('Phone cable',60)">Add to Cart</button>
+    </div>
+
+    <!-- Product #4 -->
+    <div class="product-card">
+        <img src="./RESOURCES/Phone cable.jpg" alt="">
+        <h4>Iphone Cable</h4>
+        <p>R60</p>
+        <button onclick="addToOrder('Iphone Cable',60)">Add to Cart</button>
+    </div>
+
+</div>
+
+        <!-- END PRODUCT GRID -->
+
+    </main>
+
+
+  <button onclick="sendOrder()">Send Order via WhatsApp</button>
+
+</div>
+    <!-- FLOATING CART BUTTON -->
+   
+   <!-- <div id="floatingCart" onclick="checkoutOrder()">Cart (0)</div> -->
+    <div id="cartPopup" style="display:none;">
+  <h3>Your Order</h3>
+  <div id="orderItems"></div> <!-- dynamically list items here -->
+  
+  <input type="text" id="c-name" placeholder="Your Name" required>
+  <input type="tel" id="c-phone" placeholder="Phone Number">
+  <input type="email" id="c-email" placeholder="Email Address">
+  
+</div>
+
+    <footer>
+        <div class="container footer-wrap">
+            <div>© <span id="year"></span> RAPREACH STUDIOS & SUPPLY</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
